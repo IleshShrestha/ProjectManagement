@@ -17,7 +17,6 @@ function SideBar({
       </div>
       <ul className="mt-8">
         {projects.map((project) => {
-          console.log("hi");
           let cssClass =
             "w-full text-left px-2 py-1 rounded-sm my-1 hover:text-stone-200 hover:bg-stone-800";
 
@@ -26,13 +25,13 @@ function SideBar({
           } else {
             cssClass += " text-stone-400";
           }
+          console.log(project.id);
           return (
             <li key={project.id}>
+              {/* onSelectProject requires an id as input */}
               <button
                 className={cssClass}
-                onClick={() => {
-                  onSelectProject(project.id);
-                }}
+                onClick={() => onSelectProject(project.id)}
               >
                 {project.title}
               </button>
